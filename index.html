@@ -1,15 +1,44 @@
-index.html
-apropos.html
-services.html
-ecran.html
-batterie.html
-frp.html
-cartemere.html
-logiciels.html
-accessoires.html
-realisations.html
-tarifs.html
-temoignages.html
-blog.html
-contact.html
-style.css
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plateforme Vidéastes Pro</title>
+<style>
+body{font-family:Arial;margin:0;background:#0f172a;color:white}
+header{background:#020617;padding:20px;text-align:center}
+h1{margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px;padding:20px}
+.card{background:#1e293b;padding:15px;border-radius:12px;transition:0.3s}
+.card:hover{transform:scale(1.05);background:#334155}
+button{background:#22c55e;border:none;padding:10px;border-radius:8px;color:white;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<h1>Plateforme Vidéastes & Caméramans</h1>
+<p>+200 Services & Opportunités</p>
+</header><div class="grid" id="grid"></div><script>
+const services = [
+"Tournage vidéo pro","Montage vidéo","Drone aérien","Clip musical","Mariage","Publicité","Documentaire","YouTube content","TikTok vidéos","Live streaming",
+"Interview","Podcast vidéo","Événementiel","Conférence","Reportage","Film court","Film long","Color grading","Motion design","Effets spéciaux",
+"Formation vidéo","Coaching caméra","Location caméra","Location lumière","Location drone","Storyboard","Scénario","Direction artistique","Réalisation","Production",
+"Post-production","Sound design","Mixage audio","Doublage","Voix off","Sous-titres","Animation 2D","Animation 3D","VFX","Green screen",
+"Corporate vidéo","Vidéo marketing","Spot TV","Teaser","Bande annonce","Vlog","Travel vidéo","Sport vidéo","Gaming vidéo","Streaming live",
+"Captation concert","Captation conférence","Vidéo immobilière","Vidéo produit","Vidéo e-commerce","Vidéo formation","Vidéo éducative","Vidéo médicale","Vidéo institutionnelle","Vidéo ONG"
+];
+
+const grid = document.getElementById("grid");
+
+for(let i=1;i<=200;i++){
+ let service = services[i % services.length];
+ let card = document.createElement("div");
+ card.className = "card";
+ card.innerHTML = `
+   <h3>Service ${i}</h3>
+   <p>${service}</p>
+   <button>Voir plus</button>
+ `;
+ grid.appendChild(card);
+}
+</script></body>
+</html>
